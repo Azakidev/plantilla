@@ -1,0 +1,19 @@
+{
+    "name": "plantilla",
+    "version": "0.0.1",
+    "description": "A tool for making templates",
+    "license": "MIT",
+    "author": "Azakidev",
+    "scripts": {
+        "dev": "vite",
+        "host": "vite --host",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "vite": "^6.1.0"
+    },
+    "dependencies": {
+        "html2canvas": "^1.4.1",
+        "panzoom": "^9.4.3"
+    }
+}

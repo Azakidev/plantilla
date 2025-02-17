@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="darkreader-lock">
+    <title>Plantilla</title>
+    <link rel="shortcut icon" href="res/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="viewport">
+        <div class="tray">
+            <a role="button" class="button" id="open">Open</a>
+            <a role="button" class="button" id="save">Save</a>
+        </div>
+        <div id="imageClamp">
+            <div class="blurs"></div>
+            <div class="text">
+                <div class="row">
+                    <div id="logoRow">
+                        <img src="res/logo.png" >
+                        <h1>FatDawlf</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>@fatdawlf.bsky.social</h1>
+                    <h2>~Akira_Noguichi</h1>
+                </div>
+            </div>
+            <img src="./res/img.png" id="dragImage">
+        </div>
+    </div>
+    <script type="module" src="src/drag.js"></script>
+    <script type="module" src="src/file.js"></script>
+</body>
+
+</html>

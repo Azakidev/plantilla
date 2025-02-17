@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url(res/Nunito.ttf);
+}
+
+:root {
+    --margin: 8px;
+    --bg-color: rgb(50, 50, 50);
+    --vp-color: rgb(25, 25, 25);
+}
+
+body {
+    height: 100dvh;
+    background-color: var(--bg-color);
+
+    overflow: hidden;
+
+    margin: 0;
+    padding: var(--margin);
+}
+
+.viewport {
+    height: calc(100% - (var(--margin) * 2));
+    flex-grow: 1;
+    background: var(--vp-color);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+
+    box-shadow: black 0 0 2px;
+}
+
+.tray {
+    position: absolute;
+    z-index: 99;
+
+    top: 5%;
+    left: 50%;
+    translate: -50% 0;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    gap: var(--margin);
+
+    border-radius: 6rem;
+    border: solid 2px #cacaca;
+
+    background-color: #66666666;
+}
+
+.button {
+    color: white;
+    text-align: center;
+
+    font-family: "Nunito";
+    font-weight: 800;
+    font-size: 24px;
+
+    width: 80%;
+    padding: 1rem;
+    border-radius: 6rem;
+
+    background-color: #666;
+    user-select: none;
+    cursor: pointer;
+    transition-duration: 200ms;
+
+    &:hover {
+        background-color: #999;
+    }
+}
+
+#imageClamp {
+    display: block;
+
+    max-width: min(90%, 750px);
+    max-height: min(90%, 560px);
+    aspect-ratio: 4/3;
+
+    overflow: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: all-scroll;
+}
+
+.blurs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        width: 101%;
+        height: 100%;
+
+        backdrop-filter: blur(50px) saturate(2);
+        mask-image: linear-gradient(180deg,
+                #000F 0%, #0009 10%, #0000 20%,
+                #0000 80%, #0009 90%, #000F 100%);
+    }
+}
+
+.text {
+    position: absolute;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: var(--margin) calc(var(--margin) * 2);
+
+    & * {
+        font-family: "Nunito";
+        margin: 0;
+        color: white;
+    }
+}
+
+#logoRow {
+    display: flex;
+    flex-direction: row;
+    
+    &>img {
+        height: 84px;
+        filter: drop-shadow(0px 0px 2px #00000044);
+        aspect-ratio: 1;
+    }
+}
+
+.text h1 {
+    font-size: min(72px, 4rem);
+    font-weight: 1000;
+}
+
+.text h2 {
+    font-size: min(48px, 2rem);
+    font-weight: 200;
+    font-style: italic;
+}
