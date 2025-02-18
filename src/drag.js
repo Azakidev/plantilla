@@ -27,11 +27,11 @@ instance.on('zoom', function () {
 function applyBounds() {
     imageWidth = imageElement.naturalWidth;
     imageHeight = imageElement.naturalHeight;
-    contWidth  = container.offsetWidth;
+    contWidth = container.offsetWidth;
     contHeight = container.offsetHeight;
-    
+
     const transform = instance.getTransform();
-    
+
     boundsZoom(transform);
     boundsPan(transform);
 }
@@ -56,12 +56,8 @@ function boundsPan(transform) {
 }
 
 function boundsZoom(transform) {
-// Todo!!!
-// Check if this works
-    if ( (imageWidth * transform.scale < contWidth) || (imageHeight * transform.scale < contHeight) ) {
-
+    if ((imageWidth * transform.scale < contWidth) || (imageHeight * transform.scale < contHeight)) {
         let zoomVal = Math.min((imageWidth * transform.scale) / contWidth, (imageHeight * transform.scale) / contHeight)
-
-        instance.smoothZoom(0, 0, 1 / zoomVal);
+        instance.zoomTo(contWidth / 2, contHeight / 2, (1 / zoomVal) + 0.01);
     }
 }
