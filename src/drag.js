@@ -56,8 +56,9 @@ function boundsPan(transform) {
 }
 
 function boundsZoom(transform) {
-    if ((transform.x > 0 & (-transform.x + contWidth > imageWidth * transform.scale)) ||
-        (transform.y > 0 & (-transform.y + contHeight > imageHeight * transform.scale))) {
+// Todo!!!
+// Check if this works
+    if ( (imageWidth * transform.scale < contWidth) || (imageHeight * transform.scale < contHeight) ) {
 
         let zoomVal = Math.min((imageWidth * transform.scale) / contWidth, (imageHeight * transform.scale) / contHeight)
 
