@@ -16,13 +16,8 @@ var instance = panzoom(imageElement, {
     minZoom: 0.2
 })
 
-instance.on('panend', function () {
-    applyBounds();
-});
-
-instance.on('zoom', function () {
-    applyBounds();
-});
+instance.on('panend', applyBounds);
+instance.on('zoom', applyBounds);
 
 function applyBounds() {
     imageWidth = imageElement.naturalWidth;
@@ -38,19 +33,22 @@ function applyBounds() {
 
 function boundsPan(transform) {
     var x, y;
-
     // Check bounds
     if (transform.x > 0) {
         x = 0
     } else if (-transform.x + contWidth > imageWidth * transform.scale) {
         x = -imageWidth * transform.scale + contWidth
-    } else { x = transform.x }
+    } else {
+        x = transform.x
+    }
 
     if (transform.y > 0) {
         y = 0
     } else if (-transform.y + contHeight > imageHeight * transform.scale) {
         y = -imageHeight * transform.scale + contHeight
-    } else { y = transform.y }
+    } else {
+        y = transform.y
+    }
 
     instance.smoothMoveTo(x, y);
 }
@@ -58,6 +56,7 @@ function boundsPan(transform) {
 function boundsZoom(transform) {
     if ((imageWidth * transform.scale < contWidth) || (imageHeight * transform.scale < contHeight)) {
         let zoomVal = Math.min((imageWidth * transform.scale) / contWidth, (imageHeight * transform.scale) / contHeight)
+        
         instance.zoomTo(contWidth / 2, contHeight / 2, (1 / zoomVal) + 0.01);
     }
 }
