@@ -61,14 +61,12 @@ body {
         font-weight: 800;
     }
 
-    &:is(.bottom) { bottom: 5%; }
-
-    &:is(.bottomHidden) { bottom: -15%; }
-
     &:is(#bottomTray) {
         top: unset !important;
         transition-duration: 500ms;
-
+        bottom: 5%;
+        
+        &:is(.bottomHidden) { bottom: -15% !important; }
         &>input {
             background-color: var(--btn-color);
             color: var(--soft-white);
@@ -97,10 +95,7 @@ body {
 
     &:is(.active) {
         background-color: rebeccapurple;
-    }
-
-    &:is(.active):hover {
-        background-color: plum;
+        &:hover { background-color: plum; }
     }
 }
 
@@ -117,11 +112,10 @@ body {
     transition-duration: 500ms;
     transition-property: opacity;
     opacity: 1;
+    
+    &:is(.hidden) { opacity: 0 !important; }
 }
 
-.hidden {
-    opacity: 0 !important;
-}
 
 .bars {
     position: absolute;

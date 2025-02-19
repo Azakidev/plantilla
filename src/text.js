@@ -22,11 +22,11 @@ events.forEach((event) => {
 
 function onToggle() {
     if (!toggle.classList.contains('active')) {
-        bottomTray.classList.replace('bottomHidden', 'bottom')
+        bottomTray.classList.remove('bottomHidden')
         toggle.innerText = "Custom";
         toggle.classList.add('active');
     } else {
-        bottomTray.classList.replace('bottom', 'bottomHidden')
+        bottomTray.classList.add('bottomHidden')
         toggle.innerText = "Socials";
         toggle.classList.remove('active');
 
