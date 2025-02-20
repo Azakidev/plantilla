@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Nunito';
-    src: url(res/Nunito.ttf);
+    src: url(Nunito.ttf);
 }
 
 :root {
@@ -13,17 +13,15 @@
 }
 
 body {
-    height: calc(100dvh - var(--margin) * 2);
-    background-color: var(--bg-color);
-
     overflow: hidden;
 
+    height: 100dvh;
     margin: 0;
-    padding: var(--margin);
+    border-radius: 16px;
 }
 
 .viewport {
-    height: 100%;
+    height: calc(100% - 3px);
 
     flex-grow: 1;
     background: var(--vp-color);
@@ -65,8 +63,12 @@ body {
         top: unset !important;
         transition-duration: 500ms;
         bottom: 5%;
-        
-        &:is(.bottomHidden) { bottom: -15% !important; }
+
+        &:is(.bottomHidden) {
+            bottom: -15% !important;
+            user-select: none;
+        }
+
         &>input {
             background-color: var(--btn-color);
             color: var(--soft-white);
@@ -74,7 +76,7 @@ body {
 
             border-radius: 6rem;
             border: dashed 1px var(--soft-white);
-            
+
             padding: 2px var(--margin);
         }
     }
@@ -95,7 +97,10 @@ body {
 
     &:is(.active) {
         background-color: rebeccapurple;
-        &:hover { background-color: plum; }
+
+        &:hover {
+            background-color: plum;
+        }
     }
 }
 
@@ -112,10 +117,12 @@ body {
     transition-duration: 500ms;
     transition-property: opacity;
     opacity: 1;
-    
-    &:is(.hidden) { opacity: 0 !important; }
+
 }
 
+.hidden {
+    opacity: 0 !important;
+}
 
 .bars {
     position: absolute;
@@ -129,7 +136,7 @@ body {
         position: absolute;
         width: 100%;
         background-color: rgba(50, 50, 50, 0.5);
-        filter: opacity(0);
+        /* filter: opacity(0); */
     }
 
     &::before {
@@ -157,7 +164,7 @@ body {
         width: 101%;
         height: 100%;
 
-        backdrop-filter: blur(50px) saturate(2);
+        backdrop-filter: blur(50px) saturate(2) opacity(0);
         mask-image: linear-gradient(180deg,
                 #000F 0%, #0009 10%, #0000 20%,
                 #0000 80%, #0009 90%, #000F 100%);
@@ -247,4 +254,15 @@ body {
         bottom: 0;
         right: 0;
     }
+}
+
+.titlebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 42px;
+
+    -webkit-app-region: drag;
 }

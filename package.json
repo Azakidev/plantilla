@@ -1,19 +1,24 @@
 {
-    "name": "plantilla",
-    "version": "0.0.2",
-    "description": "A tool for making templates",
-    "license": "MIT",
-    "author": "Azakidev",
-    "scripts": {
-        "dev": "vite",
-        "host": "vite --host",
-        "build": "vite build"
-    },
-    "devDependencies": {
-        "vite": "^6.1.0"
-    },
-    "dependencies": {
-        "html2canvas": "^1.4.1",
-        "panzoom": "^9.4.3"
-    }
+  "name": "plantilla",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && electron-builder",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "electron": "^30.0.1",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.6",
+    "vite-plugin-electron": "^0.28.6",
+    "vite-plugin-electron-renderer": "^0.14.5"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "panzoom": "^9.4.3"
+  },
+  "main": "dist-electron/main.js"
 }

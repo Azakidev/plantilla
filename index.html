@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="darkreader-lock">
     <title>Plantilla</title>
-    <link rel="shortcut icon" href="res/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div class="viewport">
+        <div class="titlebar"></div>
         <p class="label" id="fileName">Select a file</p>
         <p class="label" id="placeholder">Go on, pick a file</p>
         <p class="label" id="plantilla">Plantilla</p>
@@ -23,8 +24,8 @@
         </div>
 
         <div class="tray bottomHidden" id="bottomTray">
-            <input type="text" maxlength="25" placeholder="Left text"  id="leftTextField">
-            <input type="text" maxlength="25" placeholder="Right text" id="rightTextField">
+            <input type="text" maxlength="25" tabindex="-1" placeholder="Left text"  id="leftTextField">
+            <input type="text" maxlength="25" tabindex="-1" placeholder="Right text" id="rightTextField">
         </div>
 
         <div id="imageClamp" class="hidden">
@@ -32,7 +33,7 @@
             <div class="blurs"></div>
             <div class="text">
                 <div class="row" id="topRow">
-                    <img src="res/logo.png">
+                    <img src="logo.png">
                     <h1>FatDawlf</h1>
                 </div>
                 <div class="row" id="bottomRow">

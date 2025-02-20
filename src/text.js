@@ -25,16 +25,22 @@ function onToggle() {
         bottomTray.classList.remove('bottomHidden')
         toggle.innerText = "Custom";
         toggle.classList.add('active');
+        
+        leftTextField.tabIndex = "0";
+        rightTextField.tabIndex = "0";
     } else {
         bottomTray.classList.add('bottomHidden')
         toggle.innerText = "Socials";
         toggle.classList.remove('active');
-
+        
         leftText.innerText = "@fatdawlf.bsky.social";
         rightText.innerText = "~Akira_Noguichi";
-
+        
         leftTextField.value = "";
         rightTextField.value = "";
+
+        leftTextField.tabIndex =  "-1";
+        rightTextField.tabIndex = "-1";
     }
 }
 
