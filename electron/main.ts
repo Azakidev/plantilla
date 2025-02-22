@@ -32,10 +32,11 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
     },
+    minWidth: 650,
+    minHeight: 600,
     autoHideMenuBar: true,
     frame: false, 
     titleBarStyle: 'hidden',
-    // remove the default titlebar
     ...(process.platform !== 'win32' ? { transparent: true } : {}),
     // expose window controlls in Windows/Linux
     ...(process.platform !== 'darwin' ? { titleBarOverlay: {
