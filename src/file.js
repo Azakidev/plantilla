@@ -15,24 +15,43 @@ function openFile() {
     input.click();
     input.onchange = e => {
         var file = e.target.files[0];
-        // Update fileName
-        fileName.innerText = file.name;
-        //Unhide and hide stuff if it's the first file opened
-        if (imageClamp.classList.contains('hidden')) {
-            imageClamp.classList.remove('hidden');
-            placeholder.classList.add('hidden');
-        }
-        //Return if the user picked no files
-        if (!file) {
-            return;
-        }
-        //Read the file
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            imageElement.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
+        open(file);
     }
+}
+
+const dropOverlay = document.getElementById("dropOver");
+document.body.addEventListener("dragenter", () => { dropOverlay.classList.remove('hidden') });
+dropOverlay.addEventListener("dragleave", () => { dropOverlay.classList.add('hidden') });
+
+dropOverlay.addEventListener("dragover", e => e.preventDefault());
+dropOverlay.addEventListener("drop", dropFile);
+
+function dropFile(e) {
+    dropOverlay.classList.add('hidden');
+    e.preventDefault();
+
+    var file = e.dataTransfer.items[0].getAsFile();
+    open(file);
+}
+
+function open(file) {
+    // Update fileName
+    fileName.innerText = file.name;
+    //Unhide and hide stuff if it's the first file opened
+    if (imageClamp.classList.contains('hidden')) {
+        imageClamp.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+    }
+    //Return if the user picked no files
+    if (!file) {
+        return;
+    }
+    //Read the file
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        imageElement.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
 }
 
 function saveFile() {
