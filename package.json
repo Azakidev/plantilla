@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "electron": "^30.0.1",
+    "electron": "^34.0.1",
     "electron-builder": "^24.13.3",
     "typescript": "^5.2.2",
     "vite": "^5.1.6",
