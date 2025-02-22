@@ -36,7 +36,8 @@ function openFile() {
 }
 
 function saveFile() {
-    const name = fileName.innerText;
+    var name;
+    name !== "Saving..." ? name = fileName.innerText : {};
     fileName.innerText = "Saving...";
 
     html2canvas(imageClamp, { backgroundColor: "#191919", })
