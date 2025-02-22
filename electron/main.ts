@@ -33,10 +33,10 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.mjs'),
     },
     autoHideMenuBar: true,
-    transparent: true,
-    frame: false,
-    // remove the default titlebar
+    frame: false, 
     titleBarStyle: 'hidden',
+    // remove the default titlebar
+    ...(process.platform !== 'win32' ? { transparent: true } : {}),
     // expose window controlls in Windows/Linux
     ...(process.platform !== 'darwin' ? { titleBarOverlay: {
       color: "#FFFFFF00",
