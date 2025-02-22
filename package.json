@@ -2,6 +2,9 @@
   "name": "plantilla",
   "private": true,
   "version": "0.1.0",
+  "description": "A tool for making templates",
+  "license": "MIT",
+  "author": "Azakidev",
   "type": "module",
   "scripts": {
     "dev": "vite",
