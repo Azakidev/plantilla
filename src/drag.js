@@ -3,8 +3,9 @@ import panzoom from "panzoom"
 export var imageElement = document.getElementById("dragImage");
 var imageWidth, imageHeight;
 
-const container = document.getElementById("imageClamp");
+const imageClamp = document.getElementById("imageClamp");
 var contWidth, contHeight;
+
 
 var instance = panzoom(imageElement, {
     filterKey: function () {
@@ -16,14 +17,18 @@ var instance = panzoom(imageElement, {
     minZoom: 0.2
 })
 
+new ResizeObserver(() => {
+    !imageClamp.classList.contains('hidden') ? applyBounds() : {}
+}).observe(imageClamp)
+
 instance.on('panend', applyBounds);
 instance.on('zoom', applyBounds);
 
 function applyBounds() {
     imageWidth = imageElement.naturalWidth;
     imageHeight = imageElement.naturalHeight;
-    contWidth = container.offsetWidth;
-    contHeight = container.offsetHeight;
+    contWidth = imageClamp.offsetWidth;
+    contHeight = imageClamp.offsetHeight;
 
     const transform = instance.getTransform();
 

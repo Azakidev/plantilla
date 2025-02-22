@@ -62,7 +62,7 @@ body {
     &:is(#bottomTray) {
         top: unset !important;
         transition-duration: 500ms;
-        bottom: 5%;
+        bottom: 2.5%;
 
         &:is(.bottomHidden) {
             bottom: -15% !important;
@@ -104,8 +104,29 @@ body {
     }
 }
 
+.combo {
+
+    display: flex;
+    gap: 0;
+    border: none;
+
+    & * {
+        border-radius: 0;
+    }
+
+    & :first-child {
+        border-radius: 6rem 0 0 6rem;
+    }
+
+    & :last-child {
+        border-radius: 0 6rem 6rem 0;
+    }
+}
+
 #imageClamp {
     max-width: min(90%, 750px);
+    max-height: min(90%, 750px);
+    min-width: 650px;
     aspect-ratio: 4/3;
 
     overflow: hidden;
@@ -115,7 +136,7 @@ body {
     cursor: all-scroll;
 
     transition-duration: 500ms;
-    transition-property: opacity;
+    transition-property: opacity width height;
     opacity: 1;
 
 }
