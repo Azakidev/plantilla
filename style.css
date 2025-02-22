@@ -136,7 +136,7 @@ body {
         position: absolute;
         width: 100%;
         background-color: rgba(50, 50, 50, 0.5);
-        /* filter: opacity(0); */
+        filter: opacity(0);
     }
 
     &::before {
@@ -161,10 +161,10 @@ body {
         content: '';
         position: absolute;
         bottom: 0;
-        width: 101%;
+        width: 100%;
         height: 100%;
 
-        backdrop-filter: blur(50px) saturate(2) opacity(0);
+        backdrop-filter: blur(50px) saturate(1.4);
         mask-image: linear-gradient(180deg,
                 #000F 0%, #0009 10%, #0000 20%,
                 #0000 80%, #0009 90%, #000F 100%);
