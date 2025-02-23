@@ -1,6 +1,8 @@
 # Plantilla
 
-A simple tool to apply a template for my social media, because twitter fkin sucks
+<center>A simple tool for cropping and applying templates to images.</center>
+
+![Screenshot](./screenshot.png)
 
 ## How to run
 The project is built with vite and vanilla js made to work right on the browser
