@@ -29,7 +29,7 @@
   },
   "linux": {
     "target": [
-      "pacman"
+      "AppImage"
     ],
     "icon": "dist",
     "category": "Graphics",
