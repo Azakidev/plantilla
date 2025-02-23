@@ -5,6 +5,7 @@
   "description": "A tool for cropping and applying templates to images",
   "license": "MIT",
   "author": "Azakidev <zazaguichi@outlook.com>",
+  "homepage": "https://github.com/Azakidev/plantilla",
   "type": "module",
   "scripts": {
     "dev": "vite",
