@@ -1,9 +1,12 @@
 # Maintainer: <zazaguichi@outlook.com>
 
-pkgname=plantilla
-pkgver=0.1.0
+pkgname=plantilla-git
+pkgver=0.1.1
 pkgrel=1
 pkgdesc="A tool for cropping and applying templates to images"
+
+provides=('plantilla')
+conflicts=('plantilla')
 
 arch=('arm' 'x86_64')
 license=('MIT')
@@ -11,6 +14,7 @@ url='https://github.com/Azakidev/plantilla'
 depends=('electron')
 makedepends=('npm' 'git')
 source=("git+https://github.com/Azakidev/plantilla.git")
+sha256sums=("SKIP")
 
 build(){
 	cd "${srcdir}/plantilla"
