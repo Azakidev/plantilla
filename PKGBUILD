@@ -32,5 +32,5 @@ package(){
 	rm -rf "${pkgdir}/opt"
 	sed -i -E 's|Exec=/opt/Plantilla/plantilla|Exec=/usr/bin/electron /usr/lib/plantilla/app.asar|' "${pkgdir}/usr/share/applications/plantilla.desktop"
 
-	install -Dm755 "${srcdir}/plantilla" "${pkgdir}/usr/bin/plantilla"
+	install -Dm755 "${srcdir}/plantilla/plantilla" "${pkgdir}/usr/bin/plantilla"
 }
