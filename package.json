@@ -2,13 +2,14 @@
   "name": "plantilla",
   "private": true,
   "version": "0.1.0",
-  "description": "A tool for making templates",
+  "description": "A tool for cropping and applying templates to images",
   "license": "MIT",
-  "author": "Azakidev",
+  "author": "Azakidev <zazaguichi@outlook.com>",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && electron-builder",
+    "build": "tsc && vite build && electron-builder --linux -c.electronDist /usr/lib/electron -c.electronVersion $(sed s/^v// /usr/lib/electron/version)",
+    "winbuild": "tsc && vite build && electron-builder",
     "preview": "vite preview"
   },
   "devDependencies": {

@@ -11,12 +11,6 @@
     "dist",
     "dist-electron"
   ],
-  "mac": {
-    "target": [
-      "dmg"
-    ],
-    "artifactName": "${productName}-Mac-${version}-Installer.${ext}"
-  },
   "win": {
     "target": [
       {
@@ -29,15 +23,16 @@
     "artifactName": "${productName}-Windows-${version}-Setup.${ext}"
   },
   "nsis": {
-    "oneClick": false,
+    "oneClick": true,
     "perMachine": false,
-    "allowToChangeInstallationDirectory": true,
-    "deleteAppDataOnUninstall": false
+    "deleteAppDataOnUninstall": true
   },
   "linux": {
     "target": [
-      "flatpak"
+      "pacman"
     ],
+    "icon": "dist",
+    "category": "Graphics",
     "artifactName": "${productName}-Linux-${version}.${ext}"
   }
 }
