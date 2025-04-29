@@ -14,12 +14,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "electron": "^34.0.1",
-    "electron-builder": "^24.13.3",
+    "electron": "^36.0",
+    "electron-builder": "^26",
     "typescript": "^5.2.2",
-    "vite": "^5.1.6",
-    "vite-plugin-electron": "^0.28.6",
-    "vite-plugin-electron-renderer": "^0.14.5"
+    "vite": "^6.3.3",
+    "vite-plugin-electron": "^0.29",
+    "vite-plugin-electron-renderer": "^0.14"
   },
   "dependencies": {
     "html2canvas": "^1.4.1",
