@@ -34,7 +34,7 @@ function onToggle() {
         toggle.classList.remove('active');
         
         leftText.innerText = "@fatdawlf.bsky.social";
-        rightText.innerText = "~Akira_Noguichi";
+        rightText.innerText = "~akiranoguichi";
         
         leftTextField.value = "";
         rightTextField.value = "";

@@ -1,7 +1,7 @@
 {
   "name": "plantilla",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tool for cropping and applying templates to images",
   "license": "MIT",
   "author": "Azakidev <zazaguichi@outlook.com>",
